@@ -1,105 +1,242 @@
-<!-- ========================================
-   おまたぢから®︎ ブログ第6回
-   WordPressのコードエディタに貼り付けてください
-   ======================================== -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>娘の成人式のために、着付けを習いました | ゆるっと整う、50代の舞台裏。</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Noto Serif JP", "Yu Mincho", serif; background: #fff; color: #333; line-height: 1.9; font-size: 15px; }
+  header.site-header { border-bottom: 1px solid #eee; padding: 32px 20px; text-align: center; }
+  header.site-header h1 { font-family: "Cormorant Garamond", "Noto Serif JP", serif; font-weight: 500; font-size: 2em; letter-spacing: 0.08em; color: #222; margin-bottom: 8px; }
+  header.site-header h1 a { color: inherit; text-decoration: none; }
+  header.site-header .tagline { font-size: 0.85em; color: #888; letter-spacing: 0.15em; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 40px 24px; display: grid; grid-template-columns: 70% 30%; gap: 48px; }
+  .back-btn { display: inline-block; font-family: "Cormorant Garamond", serif; font-size: 0.9em; letter-spacing: 0.1em; color: #666; text-decoration: none; padding: 8px 0; margin-bottom: 24px; transition: color 0.2s; }
+  .back-btn:hover { color: #b87a7a; }
+  .back-btn::before { content: "← "; }
+  article.post { padding-bottom: 40px; border-bottom: 1px solid #eee; }
+  .post-meta { font-family: "Cormorant Garamond", serif; font-size: 0.85em; letter-spacing: 0.12em; color: #999; margin-bottom: 12px; }
+  .post-meta .cat { color: #b87a7a; margin-left: 12px; }
+  article.post h1.post-title { font-size: 1.7em; font-weight: 500; letter-spacing: 0.04em; line-height: 1.5; color: #222; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+  .post-thumb { width: 100%; aspect-ratio: 16 / 9; background: linear-gradient(135deg, #f0f0f0, #e5e5e5); border-radius: 2px; position: relative; margin-bottom: 32px; }
+  .post-thumb::after { content: "No Image"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #bbb; font-family: "Cormorant Garamond", serif; letter-spacing: 0.1em; }
+  .post-body { font-size: 1em; }
+  .post-body p { margin: 0 0 1.5em; }
+  .post-body h2 { font-size: 1.25em; font-weight: 500; letter-spacing: 0.04em; color: #222; margin: 2em 0 1em; padding-left: 14px; border-left: 3px solid #b87a7a; }
+  .post-body hr { border: none; border-top: 1px dashed #ddd; margin: 2em 0; }
+  .post-body strong { color: #222; background: linear-gradient(transparent 70%, #fce9e4 70%); }
+  .post-body ul { margin: 0 0 1.5em 1.2em; padding-left: 1em; }
+  .post-body ul li { margin-bottom: 0.5em; line-height: 1.9; }
+  .post-body small { color: #999; font-size: 0.85em; }
+  .post-body .text-pink-lg { display: inline-block; font-size: 1.05em; }
+  .post-footer { margin-top: 40px; text-align: center; }
+  aside { font-size: 0.9em; }
+  aside section { margin-bottom: 36px; }
+  aside h3 { font-family: "Cormorant Garamond", serif; font-weight: 500; font-size: 1.2em; letter-spacing: 0.1em; color: #222; padding-bottom: 8px; border-bottom: 1px solid #ddd; margin-bottom: 14px; }
+  .search-box { display: flex; border: 1px solid #ddd; border-radius: 2px; overflow: hidden; }
+  .search-box input { flex: 1; padding: 8px 10px; border: none; outline: none; font-family: inherit; font-size: 0.9em; }
+  .search-box button { background: #333; color: #fff; border: none; padding: 0 14px; cursor: pointer; font-family: inherit; }
+  .search-box button:hover { background: #b87a7a; }
+  .calendar { width: 100%; border-collapse: collapse; text-align: center; font-size: 0.85em; }
+  .calendar caption { font-family: "Cormorant Garamond", serif; font-size: 1.05em; letter-spacing: 0.08em; color: #555; padding-bottom: 8px; }
+  .calendar th { color: #999; font-weight: 400; padding: 6px 0; font-size: 0.8em; }
+  .calendar td { padding: 6px 0; color: #555; }
+  .calendar td.today { background: #333; color: #fff; border-radius: 50%; }
+  .calendar td.has-post { color: #b87a7a; font-weight: 700; }
+  .calendar td.empty { color: #ddd; }
+  aside ul { list-style: none; }
+  aside li { padding: 8px 0; border-bottom: 1px dashed #eee; }
+  aside li:last-child { border-bottom: none; }
+  aside li a { color: #555; text-decoration: none; display: flex; justify-content: space-between; transition: color 0.2s; }
+  aside li a:hover { color: #b87a7a; }
+  aside li a .count { color: #aaa; font-family: "Cormorant Garamond", serif; font-size: 0.9em; }
+  footer.site-footer { text-align: center; padding: 40px 20px; border-top: 1px solid #eee; color: #999; font-size: 0.8em; letter-spacing: 0.1em; }
+  @media (max-width: 768px) {
+    .container { grid-template-columns: 1fr; gap: 40px; padding: 24px 16px; }
+    header.site-header { padding: 24px 16px; }
+    header.site-header h1 { font-size: 1.5em; }
+    article.post h1.post-title { font-size: 1.3em; }
+    .post-body h2 { font-size: 1.1em; }
+  }
+</style>
+</head>
+<body>
 
-<h1>娘の成人式のために、着付けを習いました👘</h1>
+<header class="site-header">
+  <h1><a href="index.html">ゆるっと整う、50代の舞台裏。</a></h1>
+  <p class="tagline">生理 ・ 温活 ・ 骨盤底筋のことを発信中</p>
+</header>
 
-<p>こんにちは！おまたぢから®︎認定講師のRです😊✨</p>
+<div class="container">
+  <main>
+    <a href="index.html" class="back-btn">一覧に戻る</a>
 
-<p>今日は少し、わたしの個人的なお話をさせてください🌸</p>
+    <article class="post">
+      <p class="post-meta">2026.04.21<span class="cat">— Rのこと ／ 趣味・日常</span></p>
+      <h1 class="post-title">娘の成人式のために、着付けを習いました👘</h1>
+      <div class="post-thumb"></div>
 
-<p>先日、20歳になった長女の成人式がありました🎉</p>
+      <div class="post-body">
+        <p>こんにちは！おまたぢから®︎認定講師のRです😊✨</p>
 
-<p>「せっかくだから、お母さんに着付けてもらいたい」</p>
+        <p>今日は少し、わたしの個人的なお話をさせてください🌸</p>
 
-<p>そんな娘の一言がきっかけで、着付けを習い始めたんです👘✨</p>
+        <p>先日、20歳になった長女の成人式がありました🎉</p>
 
-<p>最初は「今さら着付けなんて、わたしにできるかな…😅」と不安でしたが、<br>
-いざ始めてみると、これがもう楽しくて楽しくて！💕</p>
+        <p>「せっかくだから、お母さんに着付けてもらいたい」</p>
 
-<hr>
+        <p>そんな娘の一言がきっかけで、着付けを習い始めたんです👘✨</p>
 
-<h2>着付けを習って気づいたこと🌟</h2>
+        <p>最初は「今さら着付けなんて、わたしにできるかな…😅」と不安でしたが、<br>
+        いざ始めてみると、これがもう楽しくて楽しくて！💕</p>
 
-<p>着付けを習い始めてすぐ、先生に言われたことがあります。</p>
+        <hr>
 
-<p>「着物を美しく着るには、まず<strong>体の軸</strong>が大事なんですよ」</p>
+        <h2>着付けを習って気づいたこと🌟</h2>
 
-<p>体の軸？🤔</p>
+        <p>着付けを習い始めてすぐ、先生に言われたことがあります。</p>
 
-<p>最初はピンとこなかったんですが、練習していくうちに少しずつ分かってきました。</p>
+        <p>「着物を美しく着るには、まず<strong>体の軸</strong>が大事なんですよ」</p>
 
-<p>着物姿って、洋服とは全然違う美しさがありますよね👘✨<br>
-あの凛とした佇まいは、実は<strong>骨盤の位置と姿勢</strong>から生まれているんです。</p>
+        <p>体の軸？🤔</p>
 
-<p>着物を着ると自然と背筋が伸びて、<br>
-歩き方もゆったり、内股気味になる。</p>
+        <p>最初はピンとこなかったんですが、練習していくうちに少しずつ分かってきました。</p>
 
-<p>「あれ、これっておまたぢから®︎で学んだことと繋がってる！😲」</p>
+        <p>着物姿って、洋服とは全然違う美しさがありますよね👘✨<br>
+        あの凛とした佇まいは、実は<strong>骨盤の位置と姿勢</strong>から生まれているんです。</p>
 
-<p>そう気づいたとき、思わず声が出てしまいました😂💕</p>
+        <p>着物を着ると自然と背筋が伸びて、<br>
+        歩き方もゆったり、内股気味になる。</p>
 
-<hr>
+        <p>「あれ、これっておまたぢから®︎で学んだことと繋がってる！😲」</p>
 
-<h2>着物と骨盤底筋の意外なつながり👘</h2>
+        <p>そう気づいたとき、思わず声が出てしまいました😂💕</p>
 
-<p>おまたぢから®︎では、<strong>骨盤底筋</strong>をとても大切にしています。</p>
+        <hr>
 
-<p>骨盤底筋とは、骨盤の底にあるハンモック状の筋肉のこと。<br>
-「おまた筋」とも呼んでいます😊</p>
+        <h2>着物と骨盤底筋の意外なつながり👘</h2>
 
-<p>現代の生活って、この骨盤底筋がどんどん使われなくなってきているんです。</p>
+        <p>おまたぢから®︎では、<strong>骨盤底筋</strong>をとても大切にしています。</p>
 
-<p>椅子にずっと座っている💺<br>
-足を組む、猫背になる…</p>
+        <p>骨盤底筋とは、骨盤の底にあるハンモック状の筋肉のこと。<br>
+        「おまた筋」とも呼んでいます😊</p>
 
-<p>でも着物を着て歩くとき、実は自然とこの骨盤底筋が使われているんです🌟</p>
+        <p>現代の生活って、この骨盤底筋がどんどん使われなくなってきているんです。</p>
 
-<p><span class="text-pink"><strong>昔の女性が着物で生活していたのは、体にとってとても理にかなっていたのかもしれません。</strong></span></p>
+        <p>椅子にずっと座っている💺<br>
+        足を組む、猫背になる…</p>
 
-<p>「なんで着物だと骨盤底筋が使われるの？🤔」</p>
+        <p>でも着物を着て歩くとき、実は自然とこの骨盤底筋が使われているんです🌟</p>
 
-<p>それはまた別の記事で詳しくお話しますね😊</p>
+        <p><span class="text-pink"><strong>昔の女性が着物で生活していたのは、体にとってとても理にかなっていたのかもしれません。</strong></span></p>
 
-<hr>
+        <p>「なんで着物だと骨盤底筋が使われるの？🤔」</p>
 
-<h2>当日、娘に着付けができました🥹</h2>
+        <p>それはまた別の記事で詳しくお話しますね😊</p>
 
-<p>練習を重ねて、当日。</p>
+        <hr>
 
-<p>緊張しながら娘に着付けをして…</p>
+        <h2>当日、娘に着付けができました🥹</h2>
 
-<p>着物姿の娘を見たとき、もう涙が止まらなくて😭💕</p>
+        <p>練習を重ねて、当日。</p>
 
-<p>「お母さん、ありがとう。嬉しい」</p>
+        <p>緊張しながら娘に着付けをして…</p>
 
-<p>その言葉が、全部の疲れを吹き飛ばしてくれました🌸</p>
+        <p>着物姿の娘を見たとき、もう涙が止まらなくて😭💕</p>
 
-<p>着付けを習い始めてよかった、と心から思えた瞬間でした✨</p>
+        <p>「お母さん、ありがとう。嬉しい」</p>
 
-<hr>
+        <p>その言葉が、全部の疲れを吹き飛ばしてくれました🌸</p>
 
-<h2>新しいことを始めるのに、遅すぎることはない🌿</h2>
+        <p>着付けを習い始めてよかった、と心から思えた瞬間でした✨</p>
 
-<p>50代で着付けを習い始めたわたしが言うのもなんですが😅</p>
+        <hr>
 
-<p>「今さら…」「もう遅い…」</p>
+        <h2>新しいことを始めるのに、遅すぎることはない🌿</h2>
 
-<p>そう思って諦めていることって、ありませんか？</p>
+        <p>50代で着付けを習い始めたわたしが言うのもなんですが😅</p>
 
-<p><span class="text-pink-lg"><strong>体のことも、趣味のことも、「今日が一番若い日」です💕</strong></span></p>
+        <p>「今さら…」「もう遅い…」</p>
 
-<p>おまたぢから®︎を学び始めるのも、<br>
-自分の体と向き合い始めるのも、<br>
-今日からで十分間に合います🌸</p>
+        <p>そう思って諦めていることって、ありませんか？</p>
 
-<p>長女の晴れ姿に背中を押してもらいながら、<br>
-わたし自身もまだまだ新しいことに挑戦していこうと思います😊💪</p>
+        <p><span class="text-pink-lg"><strong>体のことも、趣味のことも、「今日が一番若い日」です💕</strong></span></p>
 
-<p>次回は「夏の冷え対策」についてお話します🧊<br>
-フォローしてお待ちください💕</p>
+        <p>おまたぢから®︎を学び始めるのも、<br>
+        自分の体と向き合い始めるのも、<br>
+        今日からで十分間に合います🌸</p>
 
-<hr>
+        <p>長女の晴れ姿に背中を押してもらいながら、<br>
+        わたし自身もまだまだ新しいことに挑戦していこうと思います😊💪</p>
 
-<p><small>おまたぢから®︎認定講師 R 🌸</small></p>
+        <p>次回は「夏の冷え対策」についてお話します🧊<br>
+        フォローしてお待ちください💕</p>
+
+        <hr>
+
+        <p><small>おまたぢから®︎認定講師 R 🌸</small></p>
+      </div>
+
+      <div class="post-footer">
+        <a href="index.html" class="back-btn">一覧に戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <aside>
+    <section>
+      <h3>Search</h3>
+      <form class="search-box" onsubmit="event.preventDefault();">
+        <input type="text" placeholder="キーワードで検索">
+        <button type="submit">🔍</button>
+      </form>
+    </section>
+
+    <section>
+      <h3>Calendar</h3>
+      <table class="calendar">
+        <caption>April 2026</caption>
+        <thead><tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr></thead>
+        <tbody>
+          <tr><td class="empty"></td><td class="empty"></td><td class="empty"></td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+          <tr><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr>
+          <tr><td>12</td><td>13</td><td>14</td><td>15</td><td class="has-post">16</td><td class="has-post">17</td><td class="has-post">18</td></tr>
+          <tr><td class="has-post">19</td><td class="has-post">20</td><td class="has-post">21</td><td class="has-post">22</td><td class="has-post">23</td><td class="today">24</td><td>25</td></tr>
+          <tr><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td class="empty"></td><td class="empty"></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h3>Archive</h3>
+      <ul>
+        <li><a href="#">2026年4月<span class="count">9</span></a></li>
+        <li><a href="#">2026年3月<span class="count">0</span></a></li>
+        <li><a href="#">2026年2月<span class="count">0</span></a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Category</h3>
+      <ul>
+        <li><a href="#">生理のこと<span class="count">4</span></a></li>
+        <li><a href="#">体のこと<span class="count">4</span></a></li>
+        <li><a href="#">食事・生活習慣<span class="count">0</span></a></li>
+        <li><a href="#">ライフステージ<span class="count">0</span></a></li>
+        <li><a href="#">Rのこと<span class="count">1</span></a></li>
+        <li><a href="#">お知らせ<span class="count">0</span></a></li>
+      </ul>
+    </section>
+  </aside>
+</div>
+
+<footer class="site-footer">
+  <p>© ゆるっと整う、50代の舞台裏。 — R</p>
+</footer>
+
+</body>
+</html>

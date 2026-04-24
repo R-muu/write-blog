@@ -1,53 +1,399 @@
-<!-- ========================================
-   おまたぢから®︎ ブログ第1回
-   WordPressのコードエディタに貼り付けてください
-   ======================================== -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>あなたの生理、何日続いてる？ | ゆるっと整う、50代の舞台裏。</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-<h1>あなたの生理、何日続いてる？🌸</h1>
+  body {
+    font-family: "Noto Serif JP", "Yu Mincho", serif;
+    background: #fff;
+    color: #333;
+    line-height: 1.9;
+    font-size: 15px;
+  }
 
-<p>こんにちは！おまたぢから®︎認定講師のRです😊</p>
+  /* ===== Header ===== */
+  header.site-header {
+    border-bottom: 1px solid #eee;
+    padding: 32px 20px;
+    text-align: center;
+  }
+  header.site-header h1 {
+    font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+    font-weight: 500;
+    font-size: 2em;
+    letter-spacing: 0.08em;
+    color: #222;
+    margin-bottom: 8px;
+  }
+  header.site-header h1 a {
+    color: inherit;
+    text-decoration: none;
+  }
+  header.site-header .tagline {
+    font-size: 0.85em;
+    color: #888;
+    letter-spacing: 0.15em;
+  }
 
-<p>「7日くらい続く」「夜ドボドボ出る」「茶色いのがダラダラ…」<br>
-かつてのわたし、全部経験しました😅</p>
+  /* ===== Layout ===== */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    gap: 48px;
+  }
 
-<p>でも<strong>食事も薬も関係なく</strong>、生活習慣をちょっと変えただけで、生理が変わったんです💡</p>
+  /* ===== Back button ===== */
+  .back-btn {
+    display: inline-block;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 0.9em;
+    letter-spacing: 0.1em;
+    color: #666;
+    text-decoration: none;
+    padding: 8px 0;
+    margin-bottom: 24px;
+    transition: color 0.2s;
+  }
+  .back-btn:hover { color: #b87a7a; }
+  .back-btn::before { content: "← "; }
 
-<hr>
+  /* ===== Article ===== */
+  article.post {
+    padding-bottom: 40px;
+    border-bottom: 1px solid #eee;
+  }
+  .post-meta {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 0.85em;
+    letter-spacing: 0.12em;
+    color: #999;
+    margin-bottom: 12px;
+  }
+  .post-meta .cat {
+    color: #b87a7a;
+    margin-left: 12px;
+  }
+  article.post h1.post-title {
+    font-size: 1.7em;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    color: #222;
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  .post-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: linear-gradient(135deg, #f0f0f0, #e5e5e5);
+    border-radius: 2px;
+    position: relative;
+    margin-bottom: 32px;
+  }
+  .post-thumb::after {
+    content: "No Image";
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: #bbb;
+    font-family: "Cormorant Garamond", serif;
+    letter-spacing: 0.1em;
+  }
 
-<h2>「健康な生理」の条件、知ってますか？✨</h2>
+  .post-body { font-size: 1em; }
+  .post-body p { margin: 0 0 1.5em; }
+  .post-body h2 {
+    font-size: 1.25em;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: #222;
+    margin: 2em 0 1em;
+    padding-left: 14px;
+    border-left: 3px solid #b87a7a;
+  }
+  .post-body hr {
+    border: none;
+    border-top: 1px dashed #ddd;
+    margin: 2em 0;
+  }
+  .post-body strong {
+    color: #222;
+    background: linear-gradient(transparent 70%, #fce9e4 70%);
+  }
+  .post-body ul {
+    margin: 0 0 1.5em 1.2em;
+    padding-left: 1em;
+  }
+  .post-body ul li {
+    margin-bottom: 0.5em;
+    line-height: 1.9;
+  }
+  .post-body small {
+    color: #999;
+    font-size: 0.85em;
+  }
 
-<p>小学校で生理の授業はあった。でも「ナプキンをあてる・痛かったら薬を飲む」以上のことを教わった記憶、ありますか？</p>
+  .post-footer {
+    margin-top: 40px;
+    text-align: center;
+  }
 
-<p>…ほとんどの人が「ない」と答えます😶</p>
+  /* ===== Sidebar ===== */
+  aside { font-size: 0.9em; }
+  aside section { margin-bottom: 36px; }
+  aside h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+    color: #222;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 14px;
+  }
 
-<p>わたしたちは<strong>正常な状態を知らないまま</strong>、40年近く生理と付き合っているんです。</p>
+  .search-box {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .search-box input {
+    flex: 1;
+    padding: 8px 10px;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 0.9em;
+  }
+  .search-box button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 0 14px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .search-box button:hover { background: #b87a7a; }
 
-<hr>
+  .calendar {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 0.85em;
+  }
+  .calendar caption {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.05em;
+    letter-spacing: 0.08em;
+    color: #555;
+    padding-bottom: 8px;
+  }
+  .calendar th {
+    color: #999;
+    font-weight: 400;
+    padding: 6px 0;
+    font-size: 0.8em;
+  }
+  .calendar td {
+    padding: 6px 0;
+    color: #555;
+  }
+  .calendar td.today {
+    background: #333;
+    color: #fff;
+    border-radius: 50%;
+  }
+  .calendar td.has-post {
+    color: #b87a7a;
+    font-weight: 700;
+  }
+  .calendar td.empty { color: #ddd; }
 
-<h2>生理は毎月の「通信簿」📝</h2>
+  aside ul { list-style: none; }
+  aside li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+  }
+  aside li:last-child { border-bottom: none; }
+  aside li a {
+    color: #555;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    transition: color 0.2s;
+  }
+  aside li a:hover { color: #b87a7a; }
+  aside li a .count {
+    color: #aaa;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 0.9em;
+  }
 
-<p>夜更かしが続いた月・冷たいものをたくさん飲んだ月・ストレスが重なった月…<br>
-心当たりがある月は、生理がいつもより重くなっていませんか？</p>
+  /* ===== Footer ===== */
+  footer.site-footer {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid #eee;
+    color: #999;
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+  }
 
-<p>生理は<strong>先月の生活を正直に映す鏡</strong>です🪞</p>
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding: 24px 16px;
+    }
+    header.site-header { padding: 24px 16px; }
+    header.site-header h1 { font-size: 1.5em; }
+    article.post h1.post-title { font-size: 1.3em; }
+    .post-body h2 { font-size: 1.1em; }
+  }
+</style>
+</head>
+<body>
 
-<p><strong>逆に言えば、生活を整えれば、生理も整う🌸</strong></p>
+<header class="site-header">
+  <h1><a href="index.html">ゆるっと整う、50代の舞台裏。</a></h1>
+  <p class="tagline">生理 ・ 温活 ・ 骨盤底筋のことを発信中</p>
+</header>
 
-<hr>
+<div class="container">
 
-<h2>まず「観察」から始めよう🌿</h2>
+  <!-- ===== Main ===== -->
+  <main>
+    <a href="index.html" class="back-btn">一覧に戻る</a>
 
-<p>次の生理が来たとき、これだけチェックしてみてください👇</p>
+    <article class="post">
+      <p class="post-meta">2026.04.16<span class="cat">— 生理のこと ／ 生理の基礎知識</span></p>
+      <h1 class="post-title">あなたの生理、何日続いてる？🌸</h1>
+      <div class="post-thumb"></div>
 
-<ul>
-  <li>🩸 何日続いた？</li>
-  <li>🌙 夜の出血量は？</li>
-  <li>🎨 血の色は？塊は出た？</li>
-  <li>😣 痛みはあった？</li>
-</ul>
+      <div class="post-body">
+        <p>こんにちは！おまたぢから®︎認定講師のRです😊</p>
 
-<p><strong>自分の生理を「知る」ことが、変化の第一歩</strong>です💪<br>
-次回は「夜の出血」についてお話しします🌙</p>
+        <p>「7日くらい続く」「夜ドボドボ出る」「茶色いのがダラダラ…」<br>
+        かつてのわたし、全部経験しました😅</p>
 
-<hr>
-<p><small>おまたぢから®︎認定講師 R 🌸</small></p>
+        <p>でも<strong>食事も薬も関係なく</strong>、生活習慣をちょっと変えただけで、生理が変わったんです💡</p>
+
+        <hr>
+
+        <h2>「健康な生理」の条件、知ってますか？✨</h2>
+
+        <p>小学校で生理の授業はあった。でも「ナプキンをあてる・痛かったら薬を飲む」以上のことを教わった記憶、ありますか？</p>
+
+        <p>…ほとんどの人が「ない」と答えます😶</p>
+
+        <p>わたしたちは<strong>正常な状態を知らないまま</strong>、40年近く生理と付き合っているんです。</p>
+
+        <hr>
+
+        <h2>生理は毎月の「通信簿」📝</h2>
+
+        <p>夜更かしが続いた月・冷たいものをたくさん飲んだ月・ストレスが重なった月…<br>
+        心当たりがある月は、生理がいつもより重くなっていませんか？</p>
+
+        <p>生理は<strong>先月の生活を正直に映す鏡</strong>です🪞</p>
+
+        <p><strong>逆に言えば、生活を整えれば、生理も整う🌸</strong></p>
+
+        <hr>
+
+        <h2>まず「観察」から始めよう🌿</h2>
+
+        <p>次の生理が来たとき、これだけチェックしてみてください👇</p>
+
+        <ul>
+          <li>🩸 何日続いた？</li>
+          <li>🌙 夜の出血量は？</li>
+          <li>🎨 血の色は？塊は出た？</li>
+          <li>😣 痛みはあった？</li>
+        </ul>
+
+        <p><strong>自分の生理を「知る」ことが、変化の第一歩</strong>です💪<br>
+        次回は「夜の出血」についてお話しします🌙</p>
+
+        <hr>
+        <p><small>おまたぢから®︎認定講師 R 🌸</small></p>
+      </div>
+
+      <div class="post-footer">
+        <a href="index.html" class="back-btn">一覧に戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== Sidebar ===== -->
+  <aside>
+
+    <section>
+      <h3>Search</h3>
+      <form class="search-box" onsubmit="event.preventDefault();">
+        <input type="text" placeholder="キーワードで検索">
+        <button type="submit">🔍</button>
+      </form>
+    </section>
+
+    <section>
+      <h3>Calendar</h3>
+      <table class="calendar">
+        <caption>April 2026</caption>
+        <thead>
+          <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="empty"></td><td class="empty"></td><td class="empty"></td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+          <tr><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr>
+          <tr><td>12</td><td>13</td><td>14</td><td>15</td><td class="has-post">16</td><td class="has-post">17</td><td class="has-post">18</td></tr>
+          <tr><td class="has-post">19</td><td class="has-post">20</td><td class="has-post">21</td><td class="has-post">22</td><td class="has-post">23</td><td class="today">24</td><td>25</td></tr>
+          <tr><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td class="empty"></td><td class="empty"></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h3>Archive</h3>
+      <ul>
+        <li><a href="#">2026年4月<span class="count">9</span></a></li>
+        <li><a href="#">2026年3月<span class="count">0</span></a></li>
+        <li><a href="#">2026年2月<span class="count">0</span></a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Category</h3>
+      <ul>
+        <li><a href="#">生理のこと<span class="count">4</span></a></li>
+        <li><a href="#">体のこと<span class="count">4</span></a></li>
+        <li><a href="#">食事・生活習慣<span class="count">0</span></a></li>
+        <li><a href="#">ライフステージ<span class="count">0</span></a></li>
+        <li><a href="#">Rのこと<span class="count">1</span></a></li>
+        <li><a href="#">お知らせ<span class="count">0</span></a></li>
+      </ul>
+    </section>
+
+  </aside>
+
+</div>
+
+<footer class="site-footer">
+  <p>© Omataji kara®︎ — R</p>
+</footer>
+
+</body>
+</html>
